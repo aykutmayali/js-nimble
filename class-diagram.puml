@@ -1,0 +1,78 @@
+@startuml "Class Diagram"
+class Member <<Entity>>{
+    +firstName: String
+    +lastName: String
+    +email: String
+    +phone: Number
+    +photo: Photo
+    +measurements: [Measurement]
+    +creditcard: Number
+    +isPT: Bool
+    +sports: Sports
+    +certificate : [Certificate]
+    +usingBrand: String
+    +sessionFee: Number
+    +discount: Number
+    +location: Location
+
+    +greet() 
+    +findPT() :[Member]
+    +updateProfile()  
+    +shareOnWall()
+    +comment()    
+    +bookPT()
+    
+}
+class Wall<<Entity>>{
+    +member: Member
+}
+class Order<<Entity>>{
+    +member: Member
+    +PT:Member
+    +price: Number
+    +creditcard: member.creditcard
+    +date: Date
+    +location: Location
+}
+interface Measurement <<ValueObject>>{
+    +type: String
+    +value: Number
+    +unit: String
+}
+class BMI <<ValueObject>> {
+    +type: String
+    +value: Number
+    +unit: String
+}
+
+interface Certificate <<ValueObject>>{
+    +type: String
+    +date: Date 
+    +description: String 
+}
+
+enum Sports{
+    CrossFit
+    Yoga
+    Pilates
+    Fitness
+}
+
+class Location<<Entity>> {
+    +coords: Number[]
+    +name: String
+}
+
+class Admin {
+    +moderateComments()
+}
+
+Admin -up-|> Member
+BMI -up-|> Measurement
+Member o--> Location
+Member --> Sports
+Member --> Wall
+Member -->Order
+
+@enduml
+
