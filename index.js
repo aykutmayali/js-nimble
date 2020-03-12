@@ -13,14 +13,13 @@ class Member{
     findPT(startDate,endDate,location,sports){
         console.log("Between dates"+startDate+"and"+endDate+"in"+location+"about"+sports+":\n")
     }
-    updateProfile(firstName,lastName,email,phone,photo,creditcard,isPT,sports,measurements,certificate,usingBrand,sessionFee,location){
+    updateProfile(firstName,lastName,email,phone,photo,creditcard,sports,measurements,certificate,usingBrand,sessionFee,location){
         this.firstName=firstName
         this.lastName=lastName
         this.email=email
         this.phone=phone
         this.photo=photo
-        this.creditcard=creditcard
-        this.isPT=isPT
+        this.creditcard=creditcard       
         this.sports=sports
         this.measurements.push(measurements)
         this.certificate.push(certificate)

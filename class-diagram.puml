@@ -6,23 +6,24 @@ class Member <<Entity>>{
     +phone: Number
     +photo: Photo
     +measurements: [Measurement]
-    +creditcard: Number
-    +isPT: Bool
-    +sports: Sports
-    +certificate : [Certificate]
-    +usingBrand: String
-    +sessionFee: Number
+    +creditcard: Number   
     +discount: Number
-    +location: Location
-
     +greet() 
     +findPT() :[Member]
     +updateProfile()  
     +shareOnWall()
     +comment()    
-    +bookPT()
-    
+    +bookPT()    
 }
+class PT<<Entity>>{
+    +sports: Sports
+    +certificate : [Certificate]
+    +usingBrand: String
+    +sessionFee: Number
+    +location: Location
+    +setDate()
+}
+
 class Wall<<Entity>>{
     +member: Member
 }
