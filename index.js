@@ -38,15 +38,17 @@ class Member{
     }
 
     shareOnWall(member,location){
-        this.member=member
-        console.log(member.firstName + "makes an activity at"+location)
+        this.member= member
+        var event= member.firstName + "makes an activity at"+location
+        console.log(event)
+        this.member.wall.push(event)
     }
     comment(description,location){
         let com= new Comment
         com.description=description
         com.location=location
     }
-    bookPT(member,PT,location,startDate,endDate){
+    bookPT(member,PT,price,creditcard,startDate,endDate){
         order = new Order(this.member,this.PT,this.location,this.member.creditcard,this.PT.sessionFee,this.startDate,this.endDate)
     }
 }
@@ -67,3 +69,25 @@ class PT{
     }
 }
 
+class Calender{
+    constructor(reservedDate,freeDate){
+        this.reservedDate=reservedDate
+        this.freeDate=freeDate
+    }
+}
+class Wall{
+    constructor(event){
+        this.event=event
+    }
+}
+
+class Order{
+    constructor(member,PT,price,creditcard,startDate,endDate){
+        this.member=member
+        this.PT=PT
+        this.price=price
+        this.creditcard=creditcard
+        this.startDate=startDate
+        this.endDate=endDate
+    }
+}

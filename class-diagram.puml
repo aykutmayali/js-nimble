@@ -33,9 +33,7 @@ class Calender<<Entity>>{
     +freeDate: Date
 }
 class Wall<<Entity>>{
-    +member: Member
-    +description :String
-    +location: Location
+    +event: [String]
 }
 class Order<<Entity>>{
     +member: Member
