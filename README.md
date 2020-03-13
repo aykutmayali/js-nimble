@@ -1,7 +1,7 @@
 # js-nimble
 ## week1 added
  
- to do
+### to do
  member propertyleri azalt, pt yi ayır
 default degerleri constructorda set edilmeli
 updatePrfile parametrelerini tek bir objeye cevir
