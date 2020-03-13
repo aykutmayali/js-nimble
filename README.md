@@ -16,3 +16,7 @@
 ####    meetup.attendees.push(this)}
 ####    PT ilem Member arası ilişki Class diagramından
 
+-----------------
+### Composition (Head--<filled>>Person)
+### Aggregation (Wheel --<>Car)
+### Association (Student 1--n > Instructor)
