@@ -5,31 +5,37 @@ class Member <<Entity>>{
     +email: String
     +phone: Number
     +photo: Photo
-    +measurements: [Measurement]
+    +measurements: [Measurement.type,Measurement.date]
     +creditcard: Number   
-    +discount: Number
-    +greet() 
-    +findPT(location,pt) :[Member]
+    -discount: Number
+    +greet()
     +updateProfile()  
-    +shareOnWall()
+    +shareOnWall()     
+    +findPT(startDate,endDate,location,sports) :[PT]
     +comment()    //push wall
     +bookPT(pt,price,creditcard,date,location,discount) //push order   
 }
 
 class PT<<Entity>>{
     +sports: Sports
-    +certificate : [Certificate]
+    +certificate : [Documents]
     +usingBrand: String[]
     +sessionFee: Number
     +location: Location
     +stars: [Stars]
-    +setDate()
-    +setPrice()
+    -schedule: Calender
+    +setDate(startDate,endDate)
+    +setPrice(number)
 
 }
-
+class Calender<<Entity>>{
+    +reservedDate: Date
+    +freeDate: Date
+}
 class Wall<<Entity>>{
     +member: Member
+    +description :String
+    +location: Location
 }
 class Order<<Entity>>{
     +member: Member
@@ -39,22 +45,30 @@ class Order<<Entity>>{
     +date: Date
     +location: Location
 }
-interface Measurement <<ValueObject>>{
-    +type: String
-    +value: Number
-    +unit: String
-}
+
 class BMI <<ValueObject>> {
     +type: String
     +value: Number
     +unit: String
 }
-interface Stars<<ValueObject>>{
-    +numberOfStars: Number
-    +member: Member
-    +pt: PT
-    +order: Order
+
+class Documents<<Entity>>{
+    +type: String
+    +date: Date
+    +description: String
+    +value: Number
+    +unit: String
+    }
+
+class Measurement <<ValueObject>>{
+    +type: String
+    +date: Date
+    +value: Number
+    +unit: String
+    +description: String
 }
+
+
 
 interface Certificate <<ValueObject>>{
     +type: String
@@ -81,14 +95,17 @@ class Admin {
 Admin -up-|> Member
 BMI --* Measurement
 Measurement --* Member
-Certificate --* PT
-Stars -up-|> PT
+Certificate -up-|> Documents
+Documents --*PT
+
 Member o--> Location
 Member --> PT
 Member *-- Wall
 Member *-- Order
 PT *-- Order
+PT*-- Calender
 PT --* Sports
+
 
 @enduml
 

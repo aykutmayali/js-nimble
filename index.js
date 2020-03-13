@@ -1,46 +1,69 @@
 class Member{
-    constructor(firstName,lastName,email,phone){
-        this.firstName=firstName
-        this.lastName=lastName
-        this.email=email
-        this.phone=phone
+    constructor(firstName,lastName,email,phone,photo,creditcard){
+        this.firstName=firstName || "Myname"
+        this.lastName=lastName || "Mylastname"
+        this.email=email || "x@y.com"
+        this.phone=phone || 9055502525
+        this.photo=photo || "Myphoto"
+        this.creditcard=creditcard || 5544998877665544
     }
 
 
     greet(member){
-        console.log("Hello"+member.firstName+member.lastName+"Welcome to PT&You")
+        console.log("Hello"+member.firstName+" "+member.lastName+"Welcome to PT&You")
     }
+    
+    updateProfile(firstName,lastName,email,phone,photo,creditcard){
+        this.firstName=firstName 
+        this.lastName=lastName 
+        this.email=email 
+        this.phone=phone 
+        this.photo=photo 
+        this.creditcard=creditcard              
+    }
+
     findPT(startDate,endDate,location,sports){
-        console.log("Between dates"+startDate+"and"+endDate+"in"+location+"about"+sports+":\n")
+        {
+            foreach(PT){
+                if(PT.location==location){
+                    if(PT.schedule.freeDate>=startDate&&PT.schedule.freeDate<endDate){
+                        return PT.firstName
+                    }
+                } else {
+                    return "There is no suitable PT"
+                }
+            }
+            
+        }
     }
-    updateProfile(firstName,lastName,email,phone,photo,creditcard,sports,measurements,certificate,usingBrand,sessionFee,location){
-        this.firstName=firstName
-        this.lastName=lastName
-        this.email=email
-        this.phone=phone
-        this.photo=photo
-        this.creditcard=creditcard       
-        this.sports=sports
-        this.measurements.push(measurements)
-        this.certificate.push(certificate)
-        this.usingBrand.push(usingBrand)
-        this.sessionFee=sessionFee
-        this.location=location
-    }
+
     shareOnWall(member,location){
         this.member=member
         console.log(member.firstName + "makes an activity at"+location)
     }
-    comment(stars,member,location){
-        console.log("There is "+stars+"for"+this.shareOnWall(member,location))
+    comment(description,location){
+        let com= new Comment
+        com.description=description
+        com.location=location
     }
-    bookPT(member,PT,location,time){
-        console.log("Member :"+member.firstName+"make a training with PT:"+PT.firstName+"at "+location+"on"+time)
+    bookPT(member,PT,location,startDate,endDate){
+        order = new Order(this.member,this.PT,this.location,this.member.creditcard,this.PT.sessionFee,this.startDate,this.endDate)
     }
 }
 
-const member1=new Member('aykut','mayali','aykut@mayali.com','+905066566565')
-member1.greet()
-member1.comment(5,member1,'esenyurt')
-const member2=new Member('x','men','x@y.com','56565656')
-member1.bookPT(member1,member2,'maslak','20.03.2020')
+class PT{
+    constructor(sports,Documents,usingBrand,seesionFee,location){
+        this.sports= sports || "CrossFit"
+        this.Documents= Documents || []
+        this.usingBrand= usingBrand || "Nike" 
+        this.seesionFee= sessionFee || 100
+        this.location= location || "Istanbul Avrupa"        
+    }
+    setPrice(number){
+        console.log("Session fee for this PT is {0}",number)
+    }
+    setDate(startDate,endDate){
+        console.log(" for this PT free between {0},{1} dates",startDate,endDate)
+    }
+}
+
