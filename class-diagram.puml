@@ -80,7 +80,7 @@ class Admin {
 
 Admin -up-|> Member
 BMI --* Measurement
-Measurement -up-|> Member
+Measurement --* Member
 Certificate --* PT
 Stars -up-|> PT
 Member o--> Location
