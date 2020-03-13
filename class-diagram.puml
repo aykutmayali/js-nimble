@@ -9,19 +9,23 @@ class Member <<Entity>>{
     +creditcard: Number   
     +discount: Number
     +greet() 
-    +findPT() :[Member]
+    +findPT(location,pt) :[Member]
     +updateProfile()  
     +shareOnWall()
-    +comment()    
-    +bookPT()    
+    +comment()    //push wall
+    +bookPT(pt,price,creditcard,date,location,discount) //push order   
 }
+
 class PT<<Entity>>{
     +sports: Sports
     +certificate : [Certificate]
-    +usingBrand: String
+    +usingBrand: String[]
     +sessionFee: Number
     +location: Location
+    +stars: [Stars]
     +setDate()
+    +setPrice()
+
 }
 
 class Wall<<Entity>>{
@@ -44,6 +48,12 @@ class BMI <<ValueObject>> {
     +type: String
     +value: Number
     +unit: String
+}
+interface Stars<<ValueObject>>{
+    +numberOfStars: Number
+    +member: Member
+    +pt: PT
+    +order: Order
 }
 
 interface Certificate <<ValueObject>>{
@@ -69,11 +79,16 @@ class Admin {
 }
 
 Admin -up-|> Member
-BMI -up-|> Measurement
+BMI --* Measurement
+Measurement -up-|> Member
+Certificate --* PT
+Stars -up-|> PT
 Member o--> Location
-Member --> Sports
-Member --> Wall
-Member -->Order
+Member --> PT
+Member *-- Wall
+Member *-- Order
+PT *-- Order
+PT --* Sports
 
 @enduml
 
