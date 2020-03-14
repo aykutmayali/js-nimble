@@ -21,8 +21,7 @@ class PT<<Entity>>{
     +certificate : [Documents]
     +usingBrand: String[]
     +sessionFee: Number
-    +location: Location
-    +stars: [Stars]
+    +location: Location    
     -schedule: Calender
     +setDate(startDate,endDate)
     +setPrice(number)
@@ -96,7 +95,7 @@ Measurement --* Member
 Certificate -up-|> Documents
 Documents --*PT
 
-Member o--> Location
+PT o--> Location
 Member --> PT
 Member *-- Wall
 Member *-- Order
