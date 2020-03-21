@@ -1,0 +1,12 @@
+{
+  "name": "week2",
+  "version": "1.0.0",
+  "description": "in class example week2",
+  "main": "index3.js",
+  "scripts": {
+    "start": "node index3.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aykut Mayali",
+  "license": "ISC"
+}
