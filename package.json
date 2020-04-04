@@ -1,0 +1,24 @@
+{
+  "name": "js-nimble",
+  "version": "1.0.0",
+  "description": "js-nimble-project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index2.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aykutmayali/js-nimble.git"
+  },
+  "keywords": [
+    "js",
+    "nodejs"
+  ],
+  "author": "aykut mayali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aykutmayali/js-nimble/issues"
+  },
+  "homepage": "https://github.com/aykutmayali/js-nimble#readme"
+}
