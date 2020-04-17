@@ -1,20 +1,23 @@
-const Member =require('./member')
+const Member = require('./member')
 const Wall= require('./wall')
 const Location=require('./location')
+const PT=require('./pt')
 
-esenyurt=new Location('coords','esenyurt')
-myWall=new Wall('','')
-
-aykut = new Member('aykut','mayali','aykutmayali@gmail.com',5058588989,'myphoto',4050252569685454)
+aykut = new Member('aykut','mayali','aykutmayali@gmail.com')
 hakki = new Member('hakki','saric')
 
+esenyurt=new Location('coords','esenyurt')
+
  hakki.greet(aykut);
- aykut.shareOnWall(esenyurt);
+ aykut.shareOnWall("esenyurt");
 
-// hakki.updateProfile('hakki','saric','hs@xmail.com',5066967686,hisphoto,'4050504140508552')
+ hakki.updateProfile('hakki','saric','hs@xmail.com')
 
-// erkan = new Member('erkan','arkan','ea@xmail.com')
-// // erkanın PT olması için inherit olması gerekli Memberdan
+ erkan = new PT('erkan','arkan','ea@xmail.com')
+function showPT(pt){
+    console.log("This pt : "+pt.firstName + " Location :"+pt.location + " sports is :"+pt.sports+" fee is :"+pt.sessionFee)
+}
+showPT(erkan)
 
 // irem = new PT('pilates','herDocuments','adidas',160,'alsancak')
 // beril = new PT('crossfit','herDocuments','nike',150,'maslak') 

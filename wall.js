@@ -1,8 +1,7 @@
-
 class Wall{
-    constructor(){
-        this.event=[]
-        this.comment=[]
+    constructor(member,location){
+        this.member=member
+        this.location=location        
     }
 }
 

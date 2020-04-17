@@ -1,23 +1,29 @@
+const Wall = require('./wall')
+
 class Member{
-    constructor(firstName,lastName,email,phone,photo,creditcard){
+    constructor(firstName,lastName,email){
         this.firstName=firstName || "Myname"
         this.lastName=lastName || "Mylastname"
         this.email=email || "x@y.com"
-        this.phone=phone || 9055502525
-        this.photo=photo || "Myphoto"
-        this.creditcard=creditcard || 5544998877665544
+        this.walls=[]
     }
     greet(member){
         console.log("Hello "+member.firstName+" "+member.lastName+" Welcome to PT&You")
     }    
-    updateProfile(firstName,lastName,email,phone,photo,creditcard){
+    updateProfile(firstName,lastName,email){
         this.firstName=firstName 
         this.lastName=lastName 
-        this.email=email 
-        this.phone=phone 
-        this.photo=photo 
-        this.creditcard=creditcard              
+        this.email=email        
+        this.walls=[]   
+        console.log("Name :"+this.firstName+" Surname: "+this.lastName+" Email: "+this.email)       
     }
+    shareOnWall(location){
+        const wall=new Wall(this,location)               
+        this.walls.push(wall)
+        var event= this.firstName + " makes a sports activity at "+location+", Damn!!"
+        console.log(event)
+    }
+
     // findPT(startDate,endDate,location,sports){
     //     {
     //         foreach(PT){
@@ -32,12 +38,8 @@ class Member{
             
     //     }
     // }
-    shareOnWall(this,location){
-        this.member= member
-        var event= member.firstName + "makes an activity at"+location
-        console.log(event)
-        this.member.wall.push(event)
-    }
+
+
     comment(member,description,location){
         let comm= new Comment
         comm.description=description

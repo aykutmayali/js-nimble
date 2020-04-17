@@ -1,15 +1,16 @@
 class PT{
-    constructor(sports,Documents,usingBrand,seesionFee,location){
-        this.sports= sports || "CrossFit"
-        this.Documents= Documents || []
-        this.usingBrand= usingBrand || "Nike" 
-        this.seesionFee= sessionFee || 100
-        this.location= location || "Istanbul Avrupa"        
+    constructor(firstName,lastName,email,sports,sessionFee,location){
+       this.firstName=firstName|| "Myname"
+       this.lastName= lastName || "Mylastname"
+       this.email=email ||"xy@xmail.com"
+       this.sports= sports || "CrossFit"
+       this.sessionFee= sessionFee || "100"
+       this.location= location || "esenyurt"        
     }
-    setPrice(number){
-        console.log("Session fee for this PT is {0}",number)
+    setPrice(sessionFee){
+        this.sessionFee=sessionFee
     }
-    setDate(startDate,endDate){
-        console.log(" for this PT free between {0},{1} dates",startDate,endDate)
-    }
+    
 }
+
+module.exports=PT
