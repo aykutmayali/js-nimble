@@ -1,11 +1,10 @@
-
 class Order{
-    constructor(member,PT,price,creditcard,startDate,endDate){
+    constructor(member,PT,date){
         this.member=member
         this.PT=PT
-        this.price=price
-        this.creditcard=creditcard
-        this.startDate=startDate
-        this.endDate=endDate
+        this.price=PT.sessionFee      
+        this.date=date
     }
 }
+
+module.exports=Order

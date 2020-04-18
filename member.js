@@ -1,4 +1,6 @@
-const Wall = require('./wall')
+   const Wall = require('./wall')
+   const Order = require('./order')
+   const PT = require('./pt')
 
 class Member{
     constructor(firstName,lastName,email){
@@ -6,6 +8,7 @@ class Member{
         this.lastName=lastName || "Mylastname"
         this.email=email || "x@y.com"
         this.walls=[]
+        this.orders=[]
     }
     greet(member){
         console.log("Hello "+member.firstName+" "+member.lastName+" Welcome to PT&You")
@@ -14,7 +17,8 @@ class Member{
         this.firstName=firstName 
         this.lastName=lastName 
         this.email=email        
-        this.walls=[]   
+        this.walls=[]
+        this.orders=[]   
         console.log("Name :"+this.firstName+" Surname: "+this.lastName+" Email: "+this.email)       
     }
     shareOnWall(location){
@@ -22,6 +26,15 @@ class Member{
         this.walls.push(wall)
         var event= this.firstName + " makes a sports activity at "+location+", Damn!!"
         console.log(event)
+    }
+
+    bookPT(PT,date){
+        const order = new Order(this,PT,date)
+        this.orders.push(order)
+        var event=this.firstName+" ordered a training session from "+PT.firstName + " price is :"+ PT.sessionFee + " date :"+date
+        console.log(event)
+        PT.orders.push(order)
+        PT.calenders.push(order)
     }
 
     // findPT(startDate,endDate,location,sports){
@@ -40,15 +53,14 @@ class Member{
     // }
 
 
-    comment(member,description,location){
-        let comm= new Comment
-        comm.description=description
-        comm.location=location
-        this.member.wall.push(comm)
-    }
-    bookPT(member,PT,price,creditcard,startDate,endDate){
-        order = new Order(this.member,this.PT,this.location,this.member.creditcard,this.PT.sessionFee,this.startDate,this.endDate)
-    }
+    // comment(member,description,location){
+    //     let comm= new Comment
+    //     comm.description=description
+    //     comm.location=location
+    //     this.member.wall.push(comm)
+    // }
+
+    
 }
 
 module.exports=Member

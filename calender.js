@@ -1,6 +1,8 @@
 class Calender{
-    constructor(reservedDate,freeDate){
-        this.reservedDate=reservedDate
-        this.freeDate=freeDate
+    constructor(order){
+        this.reservedDate=order.date
+        this.freeDate=order.date + "2 hour" 
     }
 }
+
+module.exports=Calender
