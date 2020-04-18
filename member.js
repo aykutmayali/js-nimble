@@ -26,6 +26,7 @@ class Member{
         this.walls.push(wall)
         var event= this.firstName + " makes a sports activity at "+location+", Damn!!"
         console.log(event)
+        return wall
     }
 
     bookPT(PT,date){
@@ -35,31 +36,8 @@ class Member{
         console.log(event)
         PT.orders.push(order)
         PT.calenders.push(order)
+        return order
     }
-
-    // findPT(startDate,endDate,location,sports){
-    //     {
-    //         foreach(PT){
-    //             if(PT.location==location){
-    //                 if(PT.schedule.freeDate>=startDate&&PT.schedule.freeDate<endDate){
-    //                     return PT.firstName
-    //                 }
-    //             } else {
-    //                 return "There is no suitable PT"
-    //             }
-    //         }
-            
-    //     }
-    // }
-
-
-    // comment(member,description,location){
-    //     let comm= new Comment
-    //     comm.description=description
-    //     comm.location=location
-    //     this.member.wall.push(comm)
-    // }
-
     
 }
 
