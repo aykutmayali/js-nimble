@@ -17,8 +17,6 @@ class Member{
         this.firstName=firstName 
         this.lastName=lastName 
         this.email=email        
-        this.walls=[]
-        this.orders=[]   
         console.log("Name :"+this.firstName+" Surname: "+this.lastName+" Email: "+this.email)       
     }
     shareOnWall(location){

@@ -25,17 +25,18 @@ showPT(erkan)
 aykut.bookPT(erkan,"18.04.2020 14:00:00")
 hakki.bookPT(seda,"18.04.2020 15:00:00")
 aykut.bookPT(seda,"19.04.2020 14:00:00")
-
+hakki.bookPT(erkan,"19.04.2020 15:00:00")
 function printMemberBooking(order){
-    console.log("This order was ordered at :"+ order.date+" by "+order.member.firstName+" with PT :"+order.PT.firstName)
+    console.log("This order was ordered at :"+ order.date+" by "+order.member.firstName+" with PT :"+order.PT.firstName+ " price : "+ order.price)
 }
 
 function showMemberOrders(member){
-    member.orders.array.array.forEach(element => {
-        printMemberBooking
-    });
+    member.orders.forEach(printMemberBooking)
 }
 
 showMemberOrders(hakki)
 showMemberOrders(aykut)
-
+// printMemberBooking(aykut.orders[0])
+// printMemberBooking(aykut.orders[1])
+// printMemberBooking(hakki.orders[0])
+// printMemberBooking(hakki.orders[1])
