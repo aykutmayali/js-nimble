@@ -1,3 +1,4 @@
+const colors=require('colors')
 const Member = require('./member')
 const Wall= require('./wall')
 const Order=require('./order')
@@ -27,7 +28,7 @@ hakki.bookPT(seda,"18.04.2020 15:00:00")
 aykut.bookPT(seda,"19.04.2020 14:00:00")
 hakki.bookPT(erkan,"19.04.2020 15:00:00")
 function printMemberBooking(order){
-    console.log("This order was ordered at :"+ order.date+" by "+order.member.firstName+" with PT :"+order.PT.firstName+ " price : "+ order.price)
+    console.log(colors.bgGray("This order was ordered at :"+colors.bgBlack(order.date.brightRed+" ")+" by "+colors.bgBrightBlue(colors.black(order.member.firstName+" ")))+colors.bgGray(" with PT :")+colors.bgRed(colors.black(order.PT.firstName+" "))+ colors.bgGray(" price : ")+ colors.bgBrightYellow(colors.black(order.price+" ")))
 }
 
 function showMemberOrders(member){
