@@ -8,6 +8,9 @@ const PT=require('./pt')
 aykut = new Member('aykut','mayali','aykutmayali@gmail.com')
 hakki = new Member('hakki','saric')
 
+db.save('member',[aykut])
+db.save('member',[hakki])
+
 esenyurt=new Location('coords','esenyurt')
 
  hakki.greet(aykut);
@@ -28,7 +31,10 @@ hakki.bookPT(seda,"18.04.2020 15:00:00")
 aykut.bookPT(seda,"19.04.2020 14:00:00")
 hakki.bookPT(erkan,"19.04.2020 15:00:00")
 function printMemberBooking(order){
-    console.log(colors.bgGray("This order was ordered at :"+colors.bgBlack(order.date.brightRed+" ")+" by "+colors.bgBrightBlue(colors.black(order.member.firstName+" ")))+colors.bgGray(" with PT :")+colors.bgRed(colors.black(order.PT.firstName+" "))+ colors.bgGray(" price : ")+ colors.bgBrightYellow(colors.black(order.price+" ")))
+    console.log(colors.bgGray("This order was ordered at :"+colors.bgBlack(order.date.brightRed+" ")
+    +" by "+colors.bgBrightBlue(colors.black(order.member.firstName+" ")))+colors.bgGray(" with PT :")
+    +colors.bgRed(colors.black(order.PT.firstName+" "))+ colors.bgGray(" price : ")
+    + colors.bgBrightYellow(colors.black(order.price+" ")))
 }
 
 function showMemberOrders(member){
