@@ -4,12 +4,13 @@ const Wall= require('./wall')
 const Order=require('./order')
 const Location=require('./location')
 const PT=require('./pt')
+const db = require('./database')
 
 aykut = new Member('aykut','mayali','aykutmayali@gmail.com')
 hakki = new Member('hakki','saric')
 
-db.save('member',[aykut])
-db.save('member',[hakki])
+//db.save('member',[aykut])
+//db.save('member',[hakki])
 
 esenyurt=new Location('coords','esenyurt')
 
@@ -41,9 +42,28 @@ function showMemberOrders(member){
     member.orders.forEach(printMemberBooking)
 }
 
-showMemberOrders(hakki)
-showMemberOrders(aykut)
-// printMemberBooking(aykut.orders[0])
-// printMemberBooking(aykut.orders[1])
-// printMemberBooking(hakki.orders[0])
-// printMemberBooking(hakki.orders[1])
+//showMemberOrders(hakki)
+//showMemberOrders(aykut)
+
+//db.save('members',[{firstName:'aykut',lastName='mayali',email='aykutmayali@gmail.com'}])
+//db.save('members',[{firstName:'hakki',lastName='saric',email='hs@xmail.com'}])
+db.save('members',[aykut,hakki])
+//db.save('pts',[erkan,seda])
+  
+const members=db.load('members')
+//const pts=db.load('pts')
+
+console.log(members)
+console.log(aykut.orders[0].PT)
+console.log(aykut.orders[0].price)
+console.log(aykut.orders[0].date)
+
+
+ printMemberBooking(aykut.orders[0])
+ printMemberBooking(aykut.orders[1])
+ printMemberBooking(hakki.orders[0])
+ printMemberBooking(hakki.orders[1])
+
+ //console.log(pts)
+ //console.log(aykut.email)
+ 
