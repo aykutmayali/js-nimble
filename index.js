@@ -9,8 +9,8 @@ const db = require('./database')
 aykut = new Member('aykut','mayali','aykutmayali@gmail.com')
 hakki = new Member('hakki','saric')
 
-//db.save('member',[aykut])
-//db.save('member',[hakki])
+db.save('members',[aykut])
+db.save('members',[hakki])
 
 esenyurt=new Location('coords','esenyurt')
 
@@ -21,6 +21,9 @@ esenyurt=new Location('coords','esenyurt')
 
  erkan = new PT('erkan','arkan','ea@xmail.com')
  seda = new PT('seda','kimse','sk@xmail.com','yoga')
+
+ db.save('Pts',erkan)
+ db.save('Pts',seda)
 
 function showPT(pt){
     console.log("This PT : "+pt.firstName + " Location :"+pt.location + " sports is :"+pt.sports+" fee is :"+pt.sessionFee)
@@ -47,16 +50,16 @@ function showMemberOrders(member){
 
 //db.save('members',[{firstName:'aykut',lastName='mayali',email='aykutmayali@gmail.com'}])
 //db.save('members',[{firstName:'hakki',lastName='saric',email='hs@xmail.com'}])
-db.save('members',[aykut,hakki])
+//db.save('members',[aykut,hakki])
 //db.save('pts',[erkan,seda])
   
-const members=db.load('members')
+//const members=db.load('members')
 //const pts=db.load('pts')
 
-console.log(members)
-console.log(aykut.orders[0].PT)
-console.log(aykut.orders[0].price)
-console.log(aykut.orders[0].date)
+//console.log(members)
+//console.log(aykut.orders[0].PT)
+//console.log(aykut.orders[0].price)
+//console.log(aykut.orders[0].date)
 
 
  printMemberBooking(aykut.orders[0])
