@@ -47,11 +47,11 @@ function showMemberOrders(member){
 
 //db.save('members',[{firstName:'aykut',lastName='mayali',email='aykutmayali@gmail.com'}])
 //db.save('members',[{firstName:'hakki',lastName='saric',email='hs@xmail.com'}])
-db.save('members',[aykut,hakki])
+//db.save('members',[aykut,hakki])
 //db.save('pts',[erkan,seda])
   
 const members=db.load('members')
-//const pts=db.load('pts')
+const pts=db.load('pts')
 
 console.log(members)
 console.log(aykut.orders[0].PT)
@@ -64,6 +64,6 @@ console.log(aykut.orders[0].date)
  printMemberBooking(hakki.orders[0])
  printMemberBooking(hakki.orders[1])
 
- //console.log(pts)
- //console.log(aykut.email)
- 
+ console.log(pts)
+ console.log(aykut.email)
+ console.log(pts[0]) 
