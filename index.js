@@ -53,8 +53,13 @@ function showMemberOrders(member){
 //db.save('members',[aykut,hakki])
 //db.save('pts',[erkan,seda])
   
+<<<<<<< HEAD
 //const members=db.load('members')
 //const pts=db.load('pts')
+=======
+const members=db.load('members')
+const pts=db.load('pts')
+>>>>>>> 40f8f7cde7cc38daed2a568b84c165a8f478b33e
 
 //console.log(members)
 //console.log(aykut.orders[0].PT)
@@ -67,6 +72,6 @@ function showMemberOrders(member){
  printMemberBooking(hakki.orders[0])
  printMemberBooking(hakki.orders[1])
 
- //console.log(pts)
- //console.log(aykut.email)
- 
+ console.log(pts)
+ console.log(aykut.email)
+ console.log(pts[0]) 
