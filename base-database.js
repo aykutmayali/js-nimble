@@ -29,7 +29,7 @@ class BaseDatabase{
     
      findByName(name){
         const objects=this.load()
-        return objects.find(o=>o.name == name)
+        return objects.find(o=>o.firstName == name)
     } 
 }
 module.exports=BaseDatabase

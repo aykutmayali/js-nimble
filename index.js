@@ -55,7 +55,8 @@ memberDatabase.save([aykut,hakki])
 ptDatabase.save([erkan,seda])
 
 const aykut2=memberDatabase.findByName('aykut')
-//printMemberBooking(aykut2)
+showMemberOrders(aykut2)
+//printMemberBooking()
 
 //showMemberOrders(hakki)
 //showMemberOrders(aykut)
