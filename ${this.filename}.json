@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-[{
-  "firstName": "1",
-  "lastName": "2",
-  "email": "3",
-  "sports": "4",
-  "sessionFee": "5",
-  "location": "6",
-  "calenders": "7",
-  "orders": "8"
-},"seda","kimse","sk@xmail.com","yoga","100","esenyurt",[],[]]
-=======
 [[
   "1",
   "2"
@@ -87,4 +75,3 @@
   "member": "21",
   "location": "8"
 }]
->>>>>>> 40f8f7cde7cc38daed2a568b84c165a8f478b33e

@@ -4,13 +4,15 @@ const Wall= require('./wall')
 const Order=require('./order')
 const Location=require('./location')
 const PT=require('./pt')
-const db = require('./database')
+const memberDatabase = require('./member-database')
+const ptDatabase = require('./pt-database')
+//const db = require('./database')
 
 aykut = new Member('aykut','mayali','aykutmayali@gmail.com')
 hakki = new Member('hakki','saric')
 
-db.save('members',[aykut])
-db.save('members',[hakki])
+//db.save('members',[aykut])
+//db.save('members',[hakki])
 
 esenyurt=new Location('coords','esenyurt')
 
@@ -22,8 +24,8 @@ esenyurt=new Location('coords','esenyurt')
  erkan = new PT('erkan','arkan','ea@xmail.com')
  seda = new PT('seda','kimse','sk@xmail.com','yoga')
 
- db.save('Pts',erkan)
- db.save('Pts',seda)
+ //db.save('Pts',erkan)
+ //db.save('Pts',seda)
 
 function showPT(pt){
     console.log("This PT : "+pt.firstName + " Location :"+pt.location + " sports is :"+pt.sports+" fee is :"+pt.sessionFee)
@@ -45,6 +47,16 @@ function showMemberOrders(member){
     member.orders.forEach(printMemberBooking)
 }
 
+showMemberOrders(hakki)
+showMemberOrders(aykut)
+printMemberBooking(aykut.orders[0])
+
+memberDatabase.save([aykut,hakki])
+ptDatabase.save([erkan,seda])
+
+const aykut2=memberDatabase.findByName('aykut')
+//printMemberBooking(aykut2)
+
 //showMemberOrders(hakki)
 //showMemberOrders(aykut)
 
@@ -53,13 +65,8 @@ function showMemberOrders(member){
 //db.save('members',[aykut,hakki])
 //db.save('pts',[erkan,seda])
   
-<<<<<<< HEAD
 //const members=db.load('members')
 //const pts=db.load('pts')
-=======
-const members=db.load('members')
-const pts=db.load('pts')
->>>>>>> 40f8f7cde7cc38daed2a568b84c165a8f478b33e
 
 //console.log(members)
 //console.log(aykut.orders[0].PT)
@@ -67,11 +74,11 @@ const pts=db.load('pts')
 //console.log(aykut.orders[0].date)
 
 
- printMemberBooking(aykut.orders[0])
- printMemberBooking(aykut.orders[1])
- printMemberBooking(hakki.orders[0])
- printMemberBooking(hakki.orders[1])
+ //printMemberBooking(aykut.orders[0])
+ //printMemberBooking(aykut.orders[1])
+ //printMemberBooking(hakki.orders[0])
+ //printMemberBooking(hakki.orders[1])
 
- console.log(pts)
- console.log(aykut.email)
- console.log(pts[0]) 
+ //console.log(pts)
+ //console.log(aykut.email)
+ //console.log(pts[0]) 
