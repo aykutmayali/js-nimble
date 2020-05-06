@@ -4,7 +4,7 @@ const flatted = require('flatted')
 class BaseDatabase{
     constructor(model){
         this.model=model
-        this.filename=model.constructor.name
+        this.filename=model.name
     }
 
      save(objects){
@@ -13,7 +13,8 @@ class BaseDatabase{
      
      load(filename){
         const file=fs.readFileSync('./${this.filename}.json','utf8')
-        return flatted.parse(file)
+        const objects=flatted.parse(file)
+        return objects.map(this.model.create)
     }
     
      insert(object){
@@ -25,11 +26,7 @@ class BaseDatabase{
         const objects=this.load()
         objects.splice(index,1)
         save(objects)
-    }
+    }    
     
-     findByName(name){
-        const objects=this.load()
-        return objects.find(o=>o.firstName == name)
-    } 
 }
 module.exports=BaseDatabase
