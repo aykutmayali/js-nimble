@@ -25,11 +25,7 @@ class BaseDatabase{
         const objects=this.load()
         objects.splice(index,1)
         save(objects)
-    }
-    
-     findByName(name){
-        const objects=this.load()
-        return objects.find(o=>o.firstName == name)
-    } 
+    }    
+     
 }
 module.exports=BaseDatabase
