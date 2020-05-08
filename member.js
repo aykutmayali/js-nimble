@@ -36,6 +36,12 @@ class Member{
         PT.calenders.push(order)
         return order
     }
+
+    static create({firstName,lastName,email}){
+        const newMember = new Member(firstName,lastName,email,walls,orders)
+        newMember.orders=orders
+        return newMember
+    }
     
 }
 
