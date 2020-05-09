@@ -40,6 +40,7 @@ class Member{
     static create({firstName,lastName,email}){
         const newMember = new Member(firstName,lastName,email,walls,orders)
         newMember.orders=orders
+      //  newMember.walls=walls
         return newMember
     }
     

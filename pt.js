@@ -18,6 +18,12 @@ class PT{
     setLocation(Location){
         this.location=Location
     }
+    static create({firstName,lastName,email,sports,sessionFee,location}){
+        const newPT = new Member(firstName,lastName,email,sports,sessionFee,location,calenders,orders)
+        newPT.orders=orders
+        newPT.calenders=calenders
+        return newPT
+    }
 }
 
 module.exports=PT
