@@ -8,8 +8,8 @@ const memberDatabase = require('./member-database')
 const ptDatabase = require('./pt-database')
 //const db = require('./database')
 
-aykut = new Member('aykut','mayali','aykutmayali@gmail.com')
-hakki = new Member('hakki','saric')
+aykut = new Member(null,'aykut','mayali','aykutmayali@gmail.com')
+hakki = new Member(null,'hakki','saric')
 
 //db.save('members',[aykut])
 //db.save('members',[hakki])
@@ -21,8 +21,8 @@ esenyurt=new Location('coords','esenyurt')
 
  hakki.updateProfile('hakki','saric','hs@xmail.com')
 
- erkan = new PT('erkan','arkan','ea@xmail.com')
- seda = new PT('seda','kimse','sk@xmail.com','yoga')
+ erkan = new PT(null,'erkan','arkan','ea@xmail.com')
+ seda = new PT(null,'seda','kimse','sk@xmail.com','yoga')
 
  //db.save('Pts',erkan)
  //db.save('Pts',seda)

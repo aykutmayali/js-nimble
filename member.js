@@ -1,14 +1,16 @@
    const Wall = require('./wall')
    const Order = require('./order')
    const PT = require('./pt')
+   const uuid= require('uuid')
 
 class Member{
-    constructor(firstName,lastName,email){
+    constructor(id=uuid.v4(),firstName,lastName,email,walls=[],orders=[]){
+        this.uuid=id
         this.firstName=firstName || "Myname"
         this.lastName=lastName || "Mylastname"
         this.email=email || "x@y.com"
-        this.walls=[]
-        this.orders=[]
+        this.walls=walls
+        this.orders=orders
     }
     greet(member){
         console.log("Hello "+member.firstName+" "+member.lastName+" Welcome to PT&You")
@@ -37,11 +39,15 @@ class Member{
         return order
     }
 
-    static create({firstName,lastName,email}){
-        const newMember = new Member(firstName,lastName,email,walls,orders)
-        newMember.orders=orders
-      //  newMember.walls=walls
-        return newMember
+    // static create({firstName,lastName,email}){
+    //     const newMember = new Member(firstName,lastName,email,walls,orders)
+    //     newMember.orders=orders
+    //   //  newMember.walls=walls
+    //     return newMember
+    // }
+
+    static create(id,firstName,lastName,email,walls,orders){
+        return new Member(id,firstName,lastName,email,walls,orders)
     }
     
 }
