@@ -9,6 +9,9 @@ class PTDatabase extends BaseDatabase {
         const objects=this.load()
         return objects.find(o=>o.firstName == name)
     } 
+    findByLocation(location) {
+        return this.findBy('location', location)
+      }
 }
 
 

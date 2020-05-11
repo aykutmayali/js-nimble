@@ -7,12 +7,12 @@ const PT=require('./pt')
 const memberDatabase = require('./member-database')
 const ptDatabase = require('./pt-database')
 //const db = require('./database')
+module.exports = { memberDatabase, ptDatabase }
 
 aykut = new Member(null,'aykut','mayali','aykutmayali@gmail.com')
 hakki = new Member(null,'hakki','saric')
 
-//db.save('members',[aykut])
-//db.save('members',[hakki])
+
 
 esenyurt=new Location('coords','esenyurt')
 
@@ -51,11 +51,13 @@ showMemberOrders(hakki)
 showMemberOrders(aykut)
 printMemberBooking(aykut.orders[0])
 
-memberDatabase.save([aykut,hakki])
-ptDatabase.save([erkan,seda])
+// memberDatabase.save([aykut,hakki])
+// ptDatabase.save([erkan,seda])
 
-const aykut2=memberDatabase.findByName('aykut')
-showMemberOrders(aykut2)
+// const aykut2=memberDatabase.findByName('aykut')
+// showMemberOrders(aykut2)
+//--------------------------
+
 //aykut2.printMemberBooking(aykut.orders[0])
 //printMemberBooking()
 
