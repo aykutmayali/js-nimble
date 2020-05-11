@@ -9,8 +9,8 @@ const ptDatabase = require('./pt-database')
 //const db = require('./database')
 module.exports = { memberDatabase, ptDatabase }
 
-aykut = new Member(null,'aykut','mayali','aykutmayali@gmail.com')
-hakki = new Member(null,'hakki','saric')
+// aykut = new Member(null,'aykut','mayali','aykutmayali@gmail.com')
+// hakki = new Member(null,'hakki','saric')
 
 
 
@@ -24,8 +24,7 @@ esenyurt=new Location('coords','esenyurt')
  erkan = new PT(null,'erkan','arkan','ea@xmail.com')
  seda = new PT(null,'seda','kimse','sk@xmail.com','yoga')
 
- //db.save('Pts',erkan)
- //db.save('Pts',seda)
+
 
 function showPT(pt){
     console.log("This PT : "+pt.firstName + " Location :"+pt.location + " sports is :"+pt.sports+" fee is :"+pt.sessionFee)
@@ -51,8 +50,8 @@ showMemberOrders(hakki)
 showMemberOrders(aykut)
 printMemberBooking(aykut.orders[0])
 
-// memberDatabase.save([aykut,hakki])
-// ptDatabase.save([erkan,seda])
+ memberDatabase.save([aykut,hakki])
+ ptDatabase.save([erkan,seda])
 
 // const aykut2=memberDatabase.findByName('aykut')
 // showMemberOrders(aykut2)
