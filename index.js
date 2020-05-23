@@ -9,8 +9,8 @@ const ptDatabase = require('./pt-database')
 //const db = require('./database')
 module.exports = { memberDatabase, ptDatabase }
 
-// aykut = new Member(null,'aykut','mayali','aykutmayali@gmail.com')
-// hakki = new Member(null,'hakki','saric')
+aykut = new Member(null,'aykut','mayali','aykutmayali@gmail.com')
+hakki = new Member(null,'hakki','saric')
 
 
 

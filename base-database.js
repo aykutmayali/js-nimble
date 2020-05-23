@@ -8,7 +8,11 @@ class BaseDatabase{
     }
 
      save(objects){
-        fs.writeFileSync('./${this.filename}.json',flatted.stringify(objects,null,2))
+       // fs.writeFileSync('./${this.filename}.json',flatted.stringify(objects,null,2))
+       // fs.writeFileSync("./${filename}.json",flatted.stringify(objects,null,2))
+       // fs.writeFileSync(`./${filename}.json`,flatted.stringify(objects,null,2))
+        fs.writeFileSync(`./${this.filename}.json`,flatted.stringify(objects,null,2))
+        
     }
      
      load(){
